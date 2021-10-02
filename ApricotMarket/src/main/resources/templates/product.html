@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+    <head>
+        <div th:replace="/fragments/header.html :: fragment-header"></div>
+        <link rel="stylesheet" href="/css/home.css" />
+        <link rel="stylesheet" href="/css/btn.css" />
+        <link rel="stylesheet" href="/css/cursor.css"/>
+        <script type="text/javascript" src="/js/btn.js"></script>
+    </head>
+    <body>
+        <div th:replace="/fragments/nav.html :: fragment-nav"></div>
+        <main>
+            <section class="py-5">
+
+                <tr th:each="item : ${itemlist}" th:object="${item}" th:if="${item.id} == ${productId}">
+                    <form method="post" th:action="@{/item/detail(id=${item.id})}">
+
+                    <div class="container">
+                    <ol class="breadcrumb ps-0 justify-content-start">
+                        <li class="breadcrumb-item">
+                            <!-- 각 제품 카테고리 표시 -->
+                            <a href="">완제품</a>
+                        </li>
+                    </ol>
+                    <!-- 물품명 -->
+                    <div class="row">
+                        <h1 th:text="${item.pdn}"class="hero-heading mb-0 col-lg-7" style="font-weight: 700">
+                            물품명
+                        </h1>
+                        <h1 th:text="${item.price} + '원'" class="hero-heading mb-0 text-sm-end col-lg-4" style="font-weight: 700; color: #ffa68a">
+                            1000원
+                        </h1>
+<!--                        <span th:text="${item.price} + '원'" class="float-end" style="color: #ffa68a">1000원</span>-->
+                    </div>
+
+                        <p class="text-muted mb-5"></p>
+                    <div class="row">
+                        <!-- 물품 설명 -->
+                        <div class="col-lg-7 mb-5 mb-lg-0">
+                            <div class="text-block" style="padding-top: 0">
+                                <div class="row mb-3">
+                                    <div class="col-sm-9">
+                                        <h5>업체명</h5>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-muted">
+                                    <i class="fas fa-store fa-fw me-2"></i><span th:text="${item.name}" style="margin-left:0px"></span><br>
+
+                                    <i class="fas fa-map-marker-alt fa-fw me-2"></i><span th:text="${item.location.city}"/><span th:text="${item.location.district}"/><span th:text="${item.location.town}"/></span>
+
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <div class="row mb-3">
+                                    <div class="col-sm-9">
+                                        <h5>유통기한</h5>
+                                    </div>
+                                </div>
+                                <div th:text="${item.expiryDate}" class="text-sm text-muted"><i class="fas fa-calendar-alt fa-fw me-2"></i>날짜<br /></div>
+                            </div>
+                            <div class="text-block">
+                                <div class="row mb-3">
+                                    <div class="col-sm-9">
+                                        <h5>물품 설명</h5>
+                                    </div>
+                                </div>
+                                <div th:text="${item.description}" class="text-sm text-muted">물품 설명<br /></div>
+                            </div>
+                        </div>
+                        <!-- 이미지 -->
+                        <div class="col-md-8 col-lg-4 ms-lg-auto">
+                            <div class="card border-0">
+                                <img src="/img/undraw_Add_to_cart_re_wrdo.svg" alt="" />
+                            </div>
+                        </div>
+                        <div class="row form-block flex-column flex-sm-row" style="border-bottom: none">
+                            <div th:if="${item.reserved==null}" class="col text-center text-sm-end">
+                                    <button class="btn btn-primary px-3" type="submit">예약하기</button>
+                            </div>
+
+                            <div th:if="${item.reserved!=null}" class="col text-center text-sm-end">
+                                    <button  class="btn btn-primary px-3" type="submit" disabled>예약중</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                    </form>
+<!--                </tr>-->
+                </tr>
+<!--                <tr th:each="location : ${locationlist}" th:object="${location}" th:if="${location.id} == ${productId}">-->
+<!--                    <td th:text="${location.city}"></td>-->
+<!--                    <td th:text="${location.id}"></td>-->
+<!--                </tr>-->
+
+            </section>
+        </main>
+
+        <footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+    </body>
+</html>

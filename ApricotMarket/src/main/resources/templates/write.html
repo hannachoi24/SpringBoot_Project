@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+    <head>
+        <div th:replace="/fragments/header.html :: fragment-header"></div>
+        <link rel="stylesheet" href="/css/home.css" />
+        <link rel="stylesheet" href="/css/cursor.css"/>
+    </head>
+
+    <body>
+        <div th:replace="/fragments/nav.html :: fragment-nav"></div>
+        <main>
+            <section class="py-5">
+                <div class="container">
+                    <h1 class="mb-5">물품 등록하기</h1>
+                    <!--게시글 입력 양식-->
+                    <form th:action="@{/item/new}" method="POST" enctype="multipart/form-data">
+                        <div class="row form-block">
+                            <div class="mb-4">
+                                <div class="custom-radio">
+                                    <input id="cooked" name="category" type="radio" class="form-check-input" value="COOKED" checked="true" />
+                                    <label class="form-check-label" for="cooked">완제품</label>
+                                </div>
+                                <div class="custom-radio">
+                                    <input id="ingredient" name="category" type="radio" class="form-check-input" value="INGREDIENTS" />
+                                    <label class="form-check-label" for="ingredient">식자재</label>
+                                </div>
+                                <div class="custom-radio">
+                                    <input id="resource" name="category" type="radio" class="form-check-input" value="MATERIAL" />
+                                    <label class="form-check-label" for="resource">폐자재</label>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="companyName">업체명</label>
+                                <input name="name" type="text" class="form-control" id="companyName" placeholder="업체명" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="productName">물품명</label>
+                                <input name="pdn" type="text" class="form-control" id="productName" placeholder="물품명" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="productName">시/도</label>
+                                <input name="city" type="text" class="form-control" id="city" placeholder="물품명" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="productName">시/군/구</label>
+                                <input name="district" type="text" class="form-control" id="district" placeholder="물품명" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="productName">읍/면/동</label>
+                                <input name="town" type="text" class="form-control" id="town" placeholder="물품명" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="sellByDate">유통기한</label>
+                                <input name="expiryDate" type="date" class="form-control" id="sellByDate" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="price">가격</label>
+                                <input name="price" type="number" class="form-control" id="price" placeholder="&#8361; 0" />
+                            </div>
+                            <div class="mb-4">
+                                <label for="explain">설명</label>
+                                <textarea name="Description" class="form-control" id="explain" placeholder="물품 설명"></textarea>
+                            </div>
+<!--                            <div class="mb-4">-->
+<!--                                <label for="image">이미지</label>-->
+<!--                                <input name="image" type="file" id="image" accept="image/*" class="form-control" />-->
+<!--                            </div>-->
+                        </div>
+                        <div class="row form-block flex-column flex-sm-row" style="border-bottom: none">
+                            <div class="col text-center text-sm-end">
+                                <button class="btn btn-primary px-3" type="submit">완료</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+    </body>
+</html>
