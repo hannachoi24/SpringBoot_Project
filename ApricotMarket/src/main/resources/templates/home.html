@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <div th:replace="/fragments/header.html :: fragment-header"></div>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/btn.css" />
+    <link rel="stylesheet" href="/css/cursor.css" />
+    <!--        <link rel="stylesheet" href="/css/pageload.css"/>-->
+    <script type="text/javascript" src="/js/btn.js"></script>
+    <script language="javascript">
+                function showPopup() {
+                    window.open('/temp/write.html', 'a', 'width=800,height=800,left=100,top=50');
+                }
+            </script>
+    <link rel="stylesheet" href="/css/effect.css" />
+    <!--        <script type="text/javascript" src="/js/pageload.js"/>-->
+</head>
+    <body>
+        <div th:replace="/fragments/nav.html :: fragment-nav-home"></div>
+        <!--검색창 및 지도 검색 버튼-->
+        <section class="bg">
+            <div class="container">
+                <div class="row align-items-center g-0">
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <div class="text-center text-lg-start">
+
+                            <div class="like-content">
+                                <button class="btn-secondary like-review">
+                                    <i class="fa fa-heart" aria-hidden="true"></i> 살구마켓
+                                </button>
+                            </div>
+<!--                            -->
+<!--                            <p class="text-white-50 lead" style="margin-bottom: 0.5rem">살리자, 지구</p>-->
+<!--                            <h1 class="text-white display-4 fw-bold" style="margin-bottom: 1.5rem">살구마켓</h1>-->
+                        </div>
+                        <form action="/item/pdn" method="get">
+                            <div class="input-group">
+                                <input type="text" name="item" placeholder="물품명을 검색해보세요!" class="form-control" />
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-search"><a th:href="@{/item/name}"></a></i></button>
+                            </div>
+                        </form>
+<!--                        <a class="btn" style="background-color: #a3cb50; padding: 0.75rem 1.25rem; margin-top: 1.5rem; color: white">지도로 검색하기</a>-->
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 text-lg-end text-center" style="margin-top: 50px">
+                        <img src="/img/undraw_Add_to_cart_re_wrdo.svg" alt="" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--카테고리 선택-->
+        <section class="py-6 bg-apricot-100">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-8">
+                        <h2>카테고리별로 찾아보세요</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+                        <div class="px-0 px-lg-3">
+                            <div class="icon-rounded bg-primary-light mb-3">
+                                <i class="fas fa-hamburger category-icon"></i>
+                            </div>
+                            <div class="wrapper">
+                                <a class="cta" th:href="@{/item/cooked}"><span>완제품</span>
+                                    <span>
+                                        <svg style="padding-bottom:12px" width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                            <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                            <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                                        </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+
+<!--                            <a href="/product/cooked" class="h5" style="font-weight: 700; display: block">완제품</a>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+                        <div class="px-0 px-lg-3">
+                            <div class="icon-rounded bg-primary-light mb-3">
+                                <i class="fas fa-carrot category-icon" style="padding-top: 0.9rem"></i>
+                            </div>
+                            <div class="wrapper">
+                                <a class="cta" th:href="@{/item/ingredient}">
+                                    <span>식재료</span>
+                                    <span>
+                                        <svg style="padding-bottom:12px"; width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                                <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                                <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                                            </g>
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+<!--                            <a href="/product/ingredient" class="h5" style="font-weight: 700; display: block">식자재</a>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+                        <div class="px-0 px-lg-3">
+                            <div class="icon-rounded bg-primary-light mb-3">
+                                <i class="fas fa-box-open category-icon"></i>
+                            </div>
+                            <div class="wrapper">
+                                <a class="cta" th:href="@{/item/material}">
+                                    <span>폐자재</span>
+                                    <span>
+                                        <svg style="padding-bottom:12px"; width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                            <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                                <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                                <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                                            </g>
+                                        </svg>
+                                     </span>
+                                </a>
+                            </div>
+<!--                            <a href="/product/resource" class="h5" style="font-weight: 700; display: block">폐자재</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-6">
+            <!--추천 상품-->
+<!--            <div class="container">-->
+<!--                <div class="row mb-5">-->
+<!--                    <div class="col-md-8">-->
+<!--                        <h2>오늘의 추천 상품</h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="swiper-container pt-3" style="overflow: visible">-->
+<!--                    &lt;!&ndash; 상품 카드 &ndash;&gt;-->
+<!--                    <div class="swiper-wrapper pb-5" style="padding: 0 auto 3rem">-->
+<!--                        <div class="swiper-slide h-auto px-2 swiper-slide-active">-->
+<!--                            <button class="button-effect" style="width:250px;">-->
+<!--                            <div class="w-100 h-100">-->
+<!--                                <div class="card h-100 border-0 shadow">-->
+<!--                                    <div class="card-img-top overflow-hidden gradient-overlay">-->
+<!--                                        <img src="../static/img/undraw_Add_to_cart_re_wrdo.svg" alt="" class="img-fluid" />-->
+<!--                                        <a href="" class="tile-link"></a>-->
+<!--                                    </div>-->
+<!--                                    <div class="card-body d-flex align-items-center">-->
+<!--                                        <div class="w-100">-->
+<!--                                            <h6 class="card-title" style="font-weight: 700">-->
+<!--                                                <a href="" class="text-decoration-none text-dark">상품명</a>-->
+<!--                                                <p class="text-muted text-sm" style="margin-top: 0.5rem">가게명</p>-->
+<!--                                                <p class="card-text text-muted">-->
+<!--                                                    <span class="h4 text-price" style="font-weight: 700">1000원</span>-->
+<!--                                                </p>-->
+<!--                                            </h6>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; 상품 카드 끝 &ndash;&gt;-->
+<!--                        <div class="swiper-slide h-auto px-2 swiper-slide-active">-->
+<!--                            <button class="button-effect" style="width:250px;">-->
+<!--                                <div class="w-100 h-100">-->
+<!--                                    <div class="card h-100 border-0 shadow">-->
+<!--                                        <div class="card-img-top overflow-hidden gradient-overlay">-->
+<!--                                            <img src="../static/img/undraw_Add_to_cart_re_wrdo.svg" alt="" class="img-fluid" />-->
+<!--                                            <a href="" class="tile-link"></a>-->
+<!--                                        </div>-->
+<!--                                        <div class="card-body d-flex align-items-center">-->
+<!--                                            <div class="w-100">-->
+<!--                                                <h6 class="card-title" style="font-weight: 700">-->
+<!--                                                    <a href="" class="text-decoration-none text-dark">상품명</a>-->
+<!--                                                    <p class="text-muted text-sm" style="margin-top: 0.5rem">가게명</p>-->
+<!--                                                    <p class="card-text text-muted">-->
+<!--                                                        <span class="h4 text-price" style="font-weight: 700">1000원</span>-->
+<!--                                                    </p>-->
+<!--                                                </h6>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide h-auto px-2 swiper-slide-active">-->
+<!--                            <button class="button-effect" style="width:250px;">-->
+<!--                                <div class="w-100 h-100">-->
+<!--                                    <div class="card h-100 border-0 shadow">-->
+<!--                                        <div class="card-img-top overflow-hidden gradient-overlay">-->
+<!--                                            <img src="../static/img/undraw_Add_to_cart_re_wrdo.svg" alt="" class="img-fluid" />-->
+<!--                                            <a href="" class="tile-link"></a>-->
+<!--                                        </div>-->
+<!--                                        <div class="card-body d-flex align-items-center">-->
+<!--                                            <div class="w-100">-->
+<!--                                                <h6 class="card-title" style="font-weight: 700">-->
+<!--                                                    <a href="" class="text-decoration-none text-dark">상품명</a>-->
+<!--                                                    <p class="text-muted text-sm" style="margin-top: 0.5rem">가게명</p>-->
+<!--                                                    <p class="card-text text-muted">-->
+<!--                                                        <span class="h4 text-price" style="font-weight: 700">1000원</span>-->
+<!--                                                    </p>-->
+<!--                                                </h6>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <div class="swiper-slide h-auto px-2 swiper-slide-active">-->
+<!--                            <button class="button-effect" style="width:250px;">-->
+<!--                                <div class="w-100 h-100">-->
+<!--                                    <div class="card h-100 border-0 shadow">-->
+<!--                                        <div class="card-img-top overflow-hidden gradient-overlay">-->
+<!--                                            <img src="../static/img/undraw_Add_to_cart_re_wrdo.svg" alt="" class="img-fluid" />-->
+<!--                                            <a href="" class="tile-link"></a>-->
+<!--                                        </div>-->
+<!--                                        <div class="card-body d-flex align-items-center">-->
+<!--                                            <div class="w-100">-->
+<!--                                                <h6 class="card-title" style="font-weight: 700">-->
+<!--                                                    <a href="" class="text-decoration-none text-dark">상품명</a>-->
+<!--                                                    <p class="text-muted text-sm" style="margin-top: 0.5rem">가게명</p>-->
+<!--                                                    <p class="card-text text-muted">-->
+<!--                                                        <span class="h4 text-price" style="font-weight: 700">1000원</span>-->
+<!--                                                    </p>-->
+<!--                                                </h6>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <!-- 최근 등록 상품 -->
+            <div class="container" style="padding-top: 1rem">
+                <div class="row mb-5">
+                    <div class="col-md-8">
+                        <h2>최근 등록된 상품</h2>
+                    </div>
+                </div>
+                <div class="swiper-container pt-3" style="overflow: visible">
+                    <!-- 상품 카드 -->
+                    <h4 th:if="${itemlist.size()==0}">아직 등록된 상품이 없습니다.</h4>
+                    <div class="swiper-wrapper pb-5" style="padding: 0 auto 3rem;">
+                        <tr th:each="item : ${itemlist}">
+                            <input type="hidden" th:name="itemTalbeId" th:value="${item.id}"/>
+                            <div class="swiper-slide h-auto px-2 swiper-slide-active">
+                                <button class="button-effect" style="width:250px;">
+                                    <div class="w-100 h-100">
+                                        <div class="card h-100 border-0 shadow">
+                                            <div class="card-img-top overflow-hidden gradient-overlay">
+                                                <img src="/img/undraw_Add_to_cart_re_wrdo.svg" alt="" class="img-fluid" />
+                                                <a th:href="@{/item/detail(id=${item.id})}" class="tile-link"></a>
+                                            </div>
+                                            <div class="card-body d-flex align-items-center">
+                                                <div class="w-100">
+                                                    <h6 class="card-title" style="font-weight: 700">
+                                                        <a href="" th:text="${item.name}" class="text-decoration-none text-dark">상품명</a>
+                                                        <p class="text-muted text-sm" style="margin-top: 0.5rem" th:text="${item.Description}">가게명</p>
+                                                        <p class="text-muted text-sm" style="margin-top: 0.5rem" th:text="${item.expiryDate}">유통기한</p>
+                                                        <p class="card-text text-muted">
+                                                            <span th:text="${item.price} + '원'" class="h4 text-price" style="font-weight: 700">1000원</span>
+                                                        </p>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                            </div>
+                        </tr>
+                        <!-- 상품 카드 끝 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+    </body>
+</html>

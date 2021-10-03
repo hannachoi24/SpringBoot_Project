@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <div th:replace="/fragments/header.html :: fragment-header"></div>
+        <link rel="stylesheet" href="/css/home.css" />
+        <link rel="stylesheet" href="/css/cursor.css"/>
+        <link rel="stylesheet" href="/css/cursor.css"/>
+    </head>
+    <body>
+    <div th:replace="/fragments/nav.html :: fragment-nav"></div>
+        <main>
+            <!--카카오 지도 API-->
+            <div id="map" style="width: 500px; height: 400px"></div>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=12d4416314b18eea2086f1c19eda416c"></script>
+            <script>
+                var container = document.getElementById('map');
+                var options = {
+                    center: new kakao.maps.LatLng(33.450701, 126.570667),
+                    level: 3,
+                };
+
+                var map = new kakao.maps.Map(container, options);
+            </script>
+        </main>
+        <footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+    </body>
+</html>

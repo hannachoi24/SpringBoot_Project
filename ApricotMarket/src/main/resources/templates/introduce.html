@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <div th:replace="/fragments/header.html :: fragment-header"></div>
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/btn.css" />
+    <link rel="stylesheet" href="/css/introduce.css"/>
+    <link rel="stylesheet" href="/css/animista.css"/>
+    <link rel="stylesheet" href="/css/cursor.css"/>
+</head>
+
+<body>
+<div th:replace="/fragments/nav.html :: fragment-nav"></div>
+<main>
+    <section class="intro_main">
+        <div class="container" style="width: 100%;">
+            <div class="row align-items-center g-0">
+                <div class="col-xl-6 col-lg-6 col-md-12" style="padding-top:50px; padding-bottom:50px; width: 60%;">
+                    <div class="text">
+                        <!--                    <span id="main-text">살</span>-->
+                        <!--                    <span id="main-text2" class="text-blur-out" style="margin-left:-4px;">리자</span><br>-->
+                        <!--                    <span id="main-text3" class="text-blur-out">지</span>-->
+                        <!--                    <span id="main-text4" style="margin-left:-4px;">구</span>-->
+                        <span class="tracking-in-expand2">살리자,</span>
+                        <span class="tracking-in-expand" style="margin-left:10px;">지구</span><br>
+                        <span class="tracking-in-expand3">살구마켓</span>
+                    </div>
+                </div>
+                <!-- <div class="col-xl-6 col-lg-6 col-md-12 text-lg-end text-center" style="width: 40%;">
+                    <img src="../static/img/undraw_flowers_vx06.svg" alt="" class="img-fluid" style="margin-top: 100px; max-height: 200px;">
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="intro_option1">
+        <div class="container">
+            <div class="row" style="justify-content: space-around; align-items: center; margin: 0 5% 0 5%;">
+                <div class="container1 col-xl-6 col-lg-6 col-md-12">
+                    <h3>환경 오염의 주범,</h3>
+                    <h3>음식물 쓰레기</h3><br>
+                    <h4>하루 평균 배출되는 음식물 쓰레기양이 </h4>
+                    <h4><strong style="background: linear-gradient(to top, #ffa58a63 50%, transparent 75%)">15,680만톤</strong>에 이른다는 사실, 알고 계신가요?</h4>
+                    <h4>음식물 쓰레기는 다량의 이산화탄소를 발생시키며,</h4>
+                    <h4>동시에 발생하는 메탄가스와 고농도 폐수는</h4>
+                    <h4>지구온난화와 수질오염의 원인이 됩니다.</h4><br>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 text-lg-end text-center">
+                    <img src="/img/undraw_Eating_together_re_ux62.svg" width="480" height="480" frameBorder="0" class="img-fluid" allowFullScreen></i>
+                </div>
+            </div>
+            <div style="margin-bottom: 100px;"></div>
+        </div>
+    </section>
+
+    <section class="intro_option2">
+        <div class="container">
+            <div class="row" style="justify-content: space-between; align-items: center; margin: 0 5% 0 5%;">
+                <div class="container3 col-xl-6 col-lg-6 col-md-12" style="padding-bottom:50px;">
+                    <img src="/img/undraw_online_groceries_a02y.svg" width="450" height="450" frameBorder="0" class="giphy-embed" allowFullScreen></img>
+                </div>
+                <div class="container4 col-xl-6 col-lg-6 col-md-12 text-lg-end text-center" style="padding-top:50px; padding-bottom:50px; margin-left: 10%;">
+                    <h3>살구마켓과 함께</h3>
+                    <h3>지구를 구하는 쇼핑에 동참해보세요</h3><br>
+                    <h4><strong>살구마켓</strong>에서는</h4>
+                    <h4>당일 제조 및 사용되어 신선도에는 이상이 없지만,</h4>
+                    <h4>유통기한이 임박했다는 이유로 폐기 처분되었던</h4>
+                    <h4><strong style="background: linear-gradient(to top, #a2cb504f 50%, transparent 75%)">완제품과 식재료</strong></h4>
+                    <h4>그리고 낭비되고 있던 플라스틱, 목재 등의 <strong style="background: linear-gradient(to top, #a2cb504f 50%, transparent 75%)">폐자재</strong>를</h4>
+                    <h4>할인된 가격으로 만나볼 수 있습니다.</h4><br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="intro_option3" style="padding-left:5%;">
+        <div class="container5" style="padding-bottom:50px;">
+            <img src="/img/undraw_Add_to_cart_re_wrdo.svg" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></img>
+        </div>
+        <div class="container6" style="margin-left:5%; padding-bottom:50px;">
+            <img src="/img/undraw_Add_to_cart_re_wrdo.svg" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></img>
+        </div>
+        <div class="container7" style="margin-left:5%; padding-bottom:50px;">
+            <img src="/img/undraw_Add_to_cart_re_wrdo.svg" width="300" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></img>
+        </div>
+
+
+
+    </section> -->
+
+</main>
+<footer th:replace="/fragments/footer.html :: fragment-footer"></footer>
+</body>
+</html>
+</html>

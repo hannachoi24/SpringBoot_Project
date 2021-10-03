@@ -1,0 +1,90 @@
+body {
+    background-color: #fffbf9;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.py-8 {
+    padding-bottom: 3.5rem !important;
+    padding-top: 3.5rem !important;
+}
+
+.p-6 {
+    padding: 2.5rem !important;
+}
+
+.card {
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+.shadow {
+    box-shadow: 0 3px 6px rgba(3, 0, 71, 0.1) !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.ms-1 {
+    margin-left: 0.25rem !important;
+    color: #a3cb50;
+    font-weight: 700;
+}
+
+.form-label {
+    color: #18113c;
+}
+
+.btn {
+    background-color: #a3cb50;
+    color: white;
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+}
+
+.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid #e8e7ed;
+    border-radius: 0.25rem;
+    color: #18113c;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    padding: 0.75rem 1.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    width: 100%;
+}
+
+.custom-radio {
+    display: block;
+    min-height: 1.6rem;
+    margin-bottom: 0.125rem;
+}
+
+.form-check-input:checked {
+    background-color: #a3cb50;
+    border-color: #a3cb50;
+}

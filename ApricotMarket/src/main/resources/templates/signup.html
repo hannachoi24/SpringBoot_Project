@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--<html lang="en">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragments/header.html :: fragment-header"></div>
+    <link rel="stylesheet" href="/css/signin.css" />
+</head>
+<body>
+<main>
+    <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-center g-0 min-vh-100">
+            <div class="col-lg-5 col-md-8 py-8 py-xl-0">
+                <div class="card shadow">
+                    <div class="card-body p-6">
+                        <div class="mb-4">
+                            <a href="">
+                                <img src="" alt="" class="mb-4" />
+                            </a>
+                            <h1 class="mb-1 fw-bold">회원가입</h1>
+                            <span>이미 계정이 있으신가요?<a th:href="@{/signin}" class="ms-1">로그인</a></span>
+                        </div>
+                        <!-- 회원가입 양식 -->
+                        <form method="post" th:action="@{/signup}">
+                            <!-- 구분 -->
+                            <div class="mb-3">
+                                <div class="custom-radio">
+                                    <input id="business" name="accountType" type="radio" class="form-check-input" value="business" onchange="setDisplay()" checked="true" />
+                                    <label class="form-check-label" for="business">업체</label>
+                                </div>
+                                <div class="custom-radio">
+                                    <input id="individual" name="accountType" type="radio" class="form-check-input" value="individual" onchange="setDisplay()" />
+                                    <label class="form-check-label" for="individual">개인</label>
+                                </div>
+                            </div>
+                            <!-- 이메일 -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">이메일</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" />
+                            </div>
+                            <!-- 비밀번호 -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">비밀번호</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                            </div>
+                            <!-- 주소 -->
+                            <div class="mb-3">
+                                <label for="post" class="form-label">주소</label>
+                                <input type="text" class="form-control" id="post" name="post" placeholder="우편번호" readonly onclick="findAddr()" />
+                                <input type="text" class="form-control" id="addr" name="addr" placeholder="주소" readonly />
+                            </div>
+                            <!-- 업체명 -->
+                            <div class="mb-3" id="companyName">
+                                <label for="company">업체명</label>
+                                <input type="text" class="form-control" id="company" name="company" placeholder="업체명" />
+                            </div>
+                            <div class="col text-center text-sm-end">
+                                <button class="btn btn-primary px-3" type="submit">회원가입</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+        // 주소 입력
+        function findAddr() {
+            new daum.Postcode({
+                oncomplete: function (data) {
+                    console.log(data);
+
+                    var roadAddr = data.roadAddress; // 도로명 주소 변수
+                    var jibunAddr = data.jibunAddress; // 지번 주소 변수
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('post').value = data.zonecode;
+                    if (roadAddr !== '') {
+                        document.getElementById('addr').value = roadAddr;
+                    } else if (jibunAddr !== '') {
+                        document.getElementById('addr').value = jibunAddr;
+                    }
+                },
+            }).open();
+        }
+
+        // 업체 선택 시 업체명 양식 추가
+        function setDisplay() {
+            if ($('input:radio[id=individual]').is(':checked')) {
+                $('#companyName').hide();
+            } else {
+                $('#companyName').show();
+            }
+        }
+    </script>
+</html>
